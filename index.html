@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pet Package</title>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    
+    <div id="toolbarRender">
+        <div class="toolBarWrap">
+            <div class="toolbarHead">
+                <h3>PET PACKAGE</h3>
+            </div>
+            <div class="paramWrap">
+                    <div class="paramSection">
+                        <div class="inputChunk">
+                            <h4>Type</h3>
+                            <div class="typeSelect">
+                                <img src="img/dogSelect.png" alt="" id="dogSelect" class="animal-pick" data-type="dog">
+                                <img src="img/catSelect.png" alt="" id="catSelect" class="animal-pick" data-type="cat">
+                            </div>
+                        </div>
+                        </div>
+                <div class="paramSection">
+                    <!-- <div class="inputChunk">
+                            <h4>City</h3>
+                            <input type="text" id="location-input">
+                        </div> -->
+                        <div class="inputChunk">
+                            <h4>Zipcode</h3>
+                            <input type="text" id="location-input">
+                        </div>
+                </div>
+                <div class="paramSection">
+                        <div class="inputChunk">
+                                <h4>Size</h3>
+                                <input type="text" id="size-input">
+                            </div>
+                            <div class="inputChunk">
+                                <h4>Age</h3>
+                                <input type="text" id="age-input">
+                            </div>
+                    </div>
+                <div class="paramSection">
+                    <div class="inputChunk">
+                            <h4>Sex</h3>
+                            <input type="text" id="sex-input">
+                        </div>
+                        <div class="inputChunk">
+                            <input type="submit" id="send">
+                        </div>
+                </div>
+            </div>
+            <div id="hideShow">
+                <h3 id="hider">HIDE</h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="picturesRender">
+        <div class="picturesWrap">
+
+        </div>
+    </div>
+
+    
+    <div id="mapRender"></div>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src = "assets/javascript/app.js"></script>
+</body>
+</html>

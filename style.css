@@ -1,0 +1,115 @@
+@font-face {
+    font-family: Moriston;
+    src: url(assets/Moriston/MoristonPersonal-Regular.otf);
+}
+
+@font-face {
+    font-family: "Moriston Bold";
+    src: url(assets/Moriston/MoristonPersonal-Bold.otf);
+}
+
+body {
+    margin: 0;
+    font-family: "Moriston Bold";
+}
+
+h3 {
+    margin: 0;
+    text-align: center;
+    background-color: #424874;
+    color: white;
+    font-size: 10px;
+    letter-spacing: 4px;
+    padding: 5px;
+
+}
+
+h4 {
+    margin: 0;
+    color: #424874;
+    font-size: 12px;
+    font-family: "Moriston Bold";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#mapRender {
+    background-image: url(img/map.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+}
+
+#toolbarRender {
+    position: fixed;
+    z-index: 100;
+    background-color: rgba(255,255,255,.9);
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0,0,0,.5);
+    transition: .3s ease;
+}
+
+.toolbarWrap {
+
+}
+
+.paramWrap {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 20px 0 20px;
+    width: 900px;
+    margin: 0 auto;
+}
+
+.inputChunk {
+}
+
+input[type=text] {
+    width: 200px;
+    padding: 5px;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #FFF2E3;
+    border: none;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    border: none;
+    color: white;
+    background-color: #424874;
+    padding: 4px 8px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: "Moriston bold";
+    border-radius: 4px;
+    margin-top: 18px;
+}
+
+.class {
+    display: flex;
+    justify-content: space-around;
+}
+
+#picturesRender {
+    position: fixed;
+}
+
+.picturesWrap {
+    height: 150px;
+    background-color: lightblue;
+    z-index: 100;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#hideShow h3 {
+    background-color: white;
+    color:#424874;
+}
