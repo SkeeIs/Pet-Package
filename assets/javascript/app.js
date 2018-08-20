@@ -48,40 +48,41 @@ $(document).on("click", ".send", function(event){
         
         var shortenedObj = response.petfinder.pets.pet;
 
-        // function petObject (){
-            var nameArray = [];
-            var descripArray = [];
-            var zipArray = [];
-            var imgArray = [];
-            var phoneArray = [];
+        var nameArr = [];
+        var zipArr = [];
+        var imgArr = [];
+        var phoneArr = [];
 
-            for (var i = 0; i < shortenedObj.length; i++) {
-                nameArray.push(shortenedObj[i].name);
-                descripArray.push(shortenedObj[i].description);
-                zipArray.push(shortenedObj[i].contact.zip);
-                imgArray.push(shortenedObj[i].media.photos.photo[2]);
-                phoneArray.push(shortenedObj[i].contact.phone);
-            }  
-        // }   
+        for (var i = 0; i < shortenedObj.length; i++) {
+            nameArr.push(shortenedObj[i].name.$t);
+            zipArr.push(shortenedObj[i].contact.zip.$t);
+            imgArr.push(shortenedObj[i].media.photos.photo[2].$t);
+            if (shortenedObj[i].contact.phone.$t) {
+                phoneArr.push(shortenedObj[i].contact.phone.$t)
+            }
+            else {
+                phoneArr.push("Information Not Given");
+            }
+        }    
+        console.log(nameArr);
+        console.log(zipArr);
+        console.log(imgArr);
+        console.log(phoneArr);
 
         database.ref().push({
+            //Storing search params
             Type: animalType,
             age: age,
             size: size,
             sex: sex,
             zip: zip,
-            name: nameArray,
-            descriptions: descripArray,
-            zipCode: zipArray,
-            images: imgArray,
-            phoneNum: phoneArray, 
+            //Storing petfinder API return data
+            name: nameArr,
+            zipCode: zipArr,
+            images: imgArr,
+            phoneNum: phoneArr 
         })
         
-        console.log(nameArray);
-        console.log(descripArray);
-        console.log(zipArray);
-        console.log(imgArray);
-        console.log(phoneArray);
     })
 })
 
