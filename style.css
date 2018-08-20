@@ -146,6 +146,21 @@ input[type=button], input[type=submit], input[type=reset] {
     animation: fadeIn .3s;
 }
 
+select {
+    padding: 40px;
+}
+
+.uk-select {
+    height: auto;
+}
+
+.uk-input, .uk-select:not([multiple]):not([size]) {
+    height: auto;
+    font-family: Moriston;
+    font-size: 12px;
+    padding: 2px;
+}
+
 
 /* /MODAL */
 
