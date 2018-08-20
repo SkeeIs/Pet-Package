@@ -57,7 +57,12 @@ $(document).on("click", "#send", function(event){
             nameArr.push(shortenedObj[i].name.$t);
             zipArr.push(shortenedObj[i].contact.zip.$t);
             imgArr.push(shortenedObj[i].media.photos.photo[2].$t);
-            phoneArr.push(shortenedObj[i].contact.phone.$t)
+            if (shortenedObj[i].contact.phone.$t) {
+                phoneArr.push(shortenedObj[i].contact.phone.$t)
+            }
+            else {
+                phoneArr.push("Information Not Given");
+            }
         }    
         console.log(nameArr);
         console.log(zipArr);
@@ -65,11 +70,13 @@ $(document).on("click", "#send", function(event){
         console.log(phoneArr);
 
         database.ref().push({
+            //Storing search params
             Type: animalType,
             age: age,
             size: size,
             sex: sex,
             zip: zip,
+            //Storing petfinder API return data
             name: nameArr,
             zipCode: zipArr,
             images: imgArr,
