@@ -78,7 +78,7 @@
                         <div class="inputChunk">
                             <div class="typeSelect">
                                 <img src="img/dogSelect.png" alt="" id="dogSelect" class = "animal-pick send" data-type="dog">
-                                <img src="img/catSelect.png" alt="" id="catSelect" class = "animal-pick send" data-type="dog">
+                                <img src="img/catSelect.png" alt="" id="catSelect" class = "animal-pick send" data-type="cat">
                             </div>
                         </div>
                     </div>
@@ -93,6 +93,15 @@
     <div id="picturesRender">
         <div class="picturesWrap">
         </div>
+    </div>
+
+    <div class="landingWrap">
+        <div id="imgWrap">
+        <img src="img/dogSelect.png" alt="logo" id="logo">
+        </div>
+        <h1 class="center">Pet Package</h1>
+        <p class="center">Pet Package is a platform that allows pet-seekers to search, rank, and contact local adoption clinics by offering geographic references.</p>
+        <h3 id="searchPets">Search pets!</h3>
     </div>
 
     <div class="infoCardWrap">
@@ -112,7 +121,12 @@
 
     <div id="modalCover"></div>
 
-    <div id="mapRender"></div>
+    <div id="mapRender">
+        <iframe id= "google-map" width="100%" height="100vh" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    <video poster="#" id="dogVideo" autoplay muted loop>
+        <source src="graphics/dogvideo.mp4" type="video/mp4">
+    </video>
 
 </body>
 </html>
