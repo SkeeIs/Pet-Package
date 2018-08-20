@@ -59,7 +59,7 @@ h4 {
     display: flex;
     justify-content: space-around;
     padding: 20px 20px 0 20px;
-    width: 900px;
+    width: 780px;
     margin: 0 auto;
 }
 
@@ -67,7 +67,7 @@ h4 {
 }
 
 input[type=text] {
-    width: 200px;
+    width: 150px;
     padding: 5px;
     margin: 0;
     box-sizing: border-box;
@@ -98,18 +98,92 @@ input[type=button], input[type=submit], input[type=reset] {
 
 #picturesRender {
     position: fixed;
+    z-index: 90;
+    bottom: 0;
+    transition: .3s ease;
 }
 
 .picturesWrap {
     height: 150px;
     background-color: lightblue;
-    z-index: 100;
     position: fixed;
-    bottom: 0;
     width: 100%;
+    box-shadow: 0 -5px 10px rgba(0,0,0,.5);
 }
 
 #hideShow h3 {
     background-color: white;
     color:#424874;
 }
+
+#dogSelect {
+    width: 60px;
+    height: 60px;
+}
+
+#catSelect {
+    width: 60px;
+    height: 60px;
+}
+
+/* MODAL */
+.modal__body {
+    height: 300px;
+    width: 300px;
+    background: red;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 101;
+    animation: growIn .3s;
+    box-shadow: 0 -5px 3900px rgba(0,0,0,1);
+}
+
+.modal__background {
+    height: 100vh;
+    width: 100vw;
+    animation: fadeIn .3s;
+}
+
+select {
+    padding: 40px;
+}
+
+.uk-select {
+    height: auto;
+}
+
+.uk-input, .uk-select:not([multiple]):not([size]) {
+    height: auto;
+    font-family: Moriston;
+    font-size: 12px;
+    padding: 2px;
+}
+
+
+/* /MODAL */
+
+/* ANIMATIONS */
+@keyframes growIn {
+    0% {
+        opacity: 0;
+        transform: scale(.5) translate(-75%, -75%);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translate(-50%, -50%);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: .5;
+    }
+}
+
+
+/* /ANIMATIONS */
