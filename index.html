@@ -16,7 +16,13 @@
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+
+    <!-- Javascript -->
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <!-- need to change this link -->
+      <script src="test.js"></script>
+      <script src="script.js"></script>
+  
 </head>
 <body>
     <div class="modalPopup"></div>
@@ -30,14 +36,14 @@
                 <div class="paramSection">
                     <div class="inputChunk">
                         <h4>Zipcode</h3>
-                        <input type="text" id="zipcode">
+                        <input type="text" id="location-input">
                     </div>
                 </div>
 
                 <div class="paramSection">
                     <div class="inputChunk">
                         <h4>Size</h3>
-                        <select name="size" class="uk-select">
+                        <select name="size" class="uk-select" id = "size-input">
                             <option value="S">Small</option>
                             <option value="M">Medium</option>
                             <option value="L">Large</option>
@@ -49,7 +55,7 @@
                 <div class="paramSection">
                     <div class="inputChunk">
                         <h4>Age</h3>
-                        <select name="age" class="uk-select">
+                        <select name="age" class="uk-select" id = "age-input">
                             <option value="Baby">Baby</option>
                             <option value="Young">Young</option>
                             <option value="Adult">Adult</option>
@@ -61,7 +67,7 @@
                 <div class="paramSection">
                     <div class="inputChunk">
                         <h4>Sex</h3>
-                        <select name="sex" class="uk-select">
+                        <select name="sex" class="uk-select" id = "sex-input">
                             <option value="M">Male</option>
                             <option value="F">Female</option>
                         </select>
@@ -71,8 +77,8 @@
                 <div class="paramSection">
                         <div class="inputChunk">
                             <div class="typeSelect">
-                                <img src="img/dogSelect.png" alt="" id="dogSelect">
-                                <img src="img/catSelect.png" alt="" id="catSelect">
+                                <img src="img/dogSelect.png" alt="" id="dogSelect" class = "animal-pick send" data-type="dog">
+                                <img src="img/catSelect.png" alt="" id="catSelect" class = "animal-pick send" data-type="dog">
                             </div>
                         </div>
                     </div>
@@ -93,13 +99,13 @@
         <div id="profilePic"></div>
         <div id="infoCardRightSide">
             <div id="profileName">
-                <h2>Name</h2>
+                <h2 id="cardName">Name</h2>
             </div>
             <div id="profileSex">
-                <h3>Sex</h3>
+                <h3 id="cardSex">Sex</h3>
             </div>
             <div id="profileZip">
-                <h3>Zip</h3>
+                <h3 id="cardZip">Zip</h3>
             </div>
         </div>
     </div>
