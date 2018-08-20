@@ -41,7 +41,7 @@
                             <option value="S">Small</option>
                             <option value="M">Medium</option>
                             <option value="L">Large</option>
-                            <option value="XL">Extra Large</option>
+                            <option value="XL">XLarge</option>
                             </select>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                 <div class="paramSection">
                     <div class="inputChunk">
                         <h4>Age</h3>
-                        <select name="age">
+                        <select name="age" class="uk-select">
                             <option value="Baby">Baby</option>
                             <option value="Young">Young</option>
                             <option value="Adult">Adult</option>
@@ -61,7 +61,7 @@
                 <div class="paramSection">
                     <div class="inputChunk">
                         <h4>Sex</h3>
-                        <select name="sex">
+                        <select name="sex" class="uk-select">
                             <option value="M">Male</option>
                             <option value="F">Female</option>
                         </select>
@@ -86,11 +86,26 @@
 
     <div id="picturesRender">
         <div class="picturesWrap">
-
         </div>
     </div>
 
-    
+    <div class="infoCardWrap">
+        <div id="profilePic"></div>
+        <div id="infoCardRightSide">
+            <div id="profileName">
+                <h2>Name</h2>
+            </div>
+            <div id="profileSex">
+                <h3>Sex</h3>
+            </div>
+            <div id="profileZip">
+                <h3>Zip</h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalCover"></div>
+
     <div id="mapRender"></div>
 
 </body>
