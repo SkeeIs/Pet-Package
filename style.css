@@ -295,7 +295,7 @@ video {
     }
     90% {
         top: 50%;
-        /* opacity: 1; */
+        opacity: 1;
     }
     100% {
         opacity: 1;
