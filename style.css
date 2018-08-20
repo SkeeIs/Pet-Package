@@ -21,7 +21,7 @@ h3 {
     font-size: 10px;
     letter-spacing: 4px;
     padding: 5px;
-
+    font-family: "Moriston Bold"
 }
 
 h4 {
@@ -59,7 +59,7 @@ h4 {
     display: flex;
     justify-content: space-around;
     padding: 20px 20px 0 20px;
-    width: 780px;
+    width: 650px;
     margin: 0 auto;
 }
 
@@ -109,6 +109,7 @@ input[type=button], input[type=submit], input[type=reset] {
     position: fixed;
     width: 100%;
     box-shadow: 0 -5px 10px rgba(0,0,0,.5);
+    display: flex;
 }
 
 #hideShow h3 {
@@ -159,10 +160,69 @@ select {
     font-family: Moriston;
     font-size: 12px;
     padding: 2px;
+    width: 75px;
+    background-color: #FFF2E3;
 }
 
+.infoCardWrap {
+    position: absolute;
+    height: 300px;
+    width: 550px;
+    border-top: 10px solid #424874;
+    z-index: 300;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+    box-shadow: 0 -5px 100px rgba(0,0,0,1);
+    padding: 20px;
+    display: flex;
+    display: none;
+}
+
+#infoCardRightSide {
+    padding-left: 20px;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+#infoCardRightSide h3 {
+    color: black;
+    background: none;
+    text-align: left;
+    letter-spacing: 1px;
+    padding: 5px 0;
+}
+
+.pictureInfo {
+    display: flex;
+
+}
+
+#profilePic {
+    height: 300px;
+    width: 300px;
+    background-color: gray;
+}
+
+.thumbnail {
+    height: 150px;
+    width: 150px;
+}
 
 /* /MODAL */
+#modalCover {
+    z-index: 200;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,.7);
+    position: absolute;
+    transition: .2s ease;
+    display: none;
+}
+
 
 /* ANIMATIONS */
 @keyframes growIn {
