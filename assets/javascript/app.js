@@ -26,6 +26,7 @@ $(document).on("click", "#send", function(event){
     var size = $("#size-input").val();
     var sex = $("#sex-input").val();
     var zip = $("#location-input").val();
+
     console.log(animalType);
     console.log(age);
     console.log(size);
@@ -51,23 +52,50 @@ $(document).on("click", "#send", function(event){
         var nameArr = [];
         var zipArr = [];
         var imgArr = [];
+        var breedArr = [];
         var phoneArr = [];
 
         for (var i = 0; i < shortenedObj.length; i++) {
             nameArr.push(shortenedObj[i].name.$t);
             zipArr.push(shortenedObj[i].contact.zip.$t);
             imgArr.push(shortenedObj[i].media.photos.photo[2].$t);
+            
+            if(shortenedObj[i].breeds.breed.$t) {
+                breedArr.push(shortenedObj[i].breeds.breed.$t);
+            }
+            else {
+                breedArr.push(shortenedObj[i].breeds.breed[0].$t);
+                breedArr.push(shortenedObj[i].breeds.breed[1].$t);
+            }
             if (shortenedObj[i].contact.phone.$t) {
                 phoneArr.push(shortenedObj[i].contact.phone.$t)
             }
             else {
                 phoneArr.push("Information Not Given");
             }
+            // var testZipButton = $("<input/>").attr({ type: "button", value: zipArr[0]});
+            // testZipButton.attr(id = "zipButton");
+            // //$("#zipButton").val(zipArr[0]);
+            // console.log(testZipButton);
+            // $("#bottomArea").html(testZipButton);
+
+                for (var i = 0; i < 5; i++){
+
+                    var thumbnail = $("<div>");
+                    thumbnail.addClass("thumbnail");
+                    var petName = $("<h4>").text(nameArr[i]);
+                    var breedType = $("<h4>").text(breedArr[i]);
+                    var image = $("<img>").attr("src", imgArr[i]);
+                    thumbnail.append(petName, breedType, image);
+                    $(".picturesWrap").append(thumbnail);
+
+                }
         }    
         console.log(nameArr);
         console.log(zipArr);
         console.log(imgArr);
         console.log(phoneArr);
+        console.log(breedArr);
 
         database.ref().push({
             //Storing search params
@@ -82,13 +110,39 @@ $(document).on("click", "#send", function(event){
             images: imgArr,
             phoneNum: phoneArr 
         })
-        
+        console.log("databaseref.key= "+firebase.database().ref("/pet-package").key);
+        console.log("databaseref.key= "+firebase.database().ref("/pet-package/").getKey());
     })
+
+
 })
 
+var address;
+
+$("#bottomArea").on("click", function(event){
+
+   event.preventDefault();
+//    var apikey = "AIzaSyATvFSKs1YEJMLy6w9qAIXKWgzoteNXrmg";
+//    address =  $("#addressInput").val();
+//    console.log("vets = "+ address);
+
+//    var queryURL = "https://www.google.com/maps/embed/v1/search?q=" + address + "&key=" + apikey;
+//    console.log("queryURL = "+ queryURL);
+
+//    $("#google-map").attr("src", queryURL);
+
+//    event.preventDefault();
+   var apikey = "AIzaSyATvFSKs1YEJMLy6w9qAIXKWgzoteNXrmg";
+   var address = $(this).val();
+    console.log(address);
+   var vets = "Veterinarians Near" + address;
+   var parks = "Dog Parks Near" + address;
+   console.log("vets = "+ vets);
+
+   var queryURL = "https://www.google.com/maps/embed/v1/search?q=" + vets + "OR" + parks + "&key=" + apikey;
+   console.log("queryURL = "+ queryURL);
+
+   $("#google-map").attr("src", queryURL);
 
 
-// var userAccounts = []
-// database.ref().on("child-added", function(snapshot){
-//     var user = snapshot.val().ref_.path_.pieces_[0];
-// });
+});
