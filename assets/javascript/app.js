@@ -48,20 +48,21 @@ $(document).on("click", "#send", function(event){
         
         var shortenedObj = response.petfinder.pets.pet;
 
-        function petObject (){
-            var breed = [];
+        // function petObject (){
+            var nameArray = [];
+            var descripArray = [];
+            var zipArray = [];
+            var imgArray = [];
+            var phoneArray = [];
+
             for (var i = 0; i < shortenedObj.length; i++) {
-                if (Array.isArray(shortenedObj[i].breeds.breed === "object")) {
-                    for (var h = 0; h < shortenedObj[i].breeds.breed.length; h++) {
-                        breed.push(shortenedObj[i].breeds.breed[h]);
-                    }   
-                }
-                else{
-                    breed.push(shortenedObj[i].breeds.breed.$t);
-                } 
-            }
-            return breed;
-        }    
+                nameArray.push(shortenedObj[i].name);
+                descripArray.push(shortenedObj[i].description);
+                zipArray.push(shortenedObj[i].contact.zip);
+                imgArray.push(shortenedObj[i].media.photos.photo[2]);
+                phoneArray.push(shortenedObj[i].contact.phone);
+            }  
+        // }   
 
         database.ref().push({
             Type: animalType,
@@ -69,10 +70,18 @@ $(document).on("click", "#send", function(event){
             size: size,
             sex: sex,
             zip: zip,
+            name: nameArray,
+            descriptions: descripArray,
+            zipCode: zipArray,
+            images: imgArray,
+            phoneNum: phoneArray, 
         })
         
-        console.log(petObject());
-    
+        console.log(nameArray);
+        console.log(descripArray);
+        console.log(zipArray);
+        console.log(imgArray);
+        console.log(phoneArray);
     })
 })
 
