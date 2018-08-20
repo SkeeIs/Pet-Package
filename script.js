@@ -1,5 +1,5 @@
 
-var hidden = false;
+var hidden = true;
 
 $(document).on("click", "#hideShow", function (){
    hideShow();
@@ -7,7 +7,6 @@ $(document).on("click", "#hideShow", function (){
 
 $(document).on("click", ".animal-pick", function() {
     hideShow();
-    
 })
 
 function hideShow() {
@@ -24,13 +23,27 @@ function hideShow() {
     else if(hidden){
         toolbar.css("top", "0px");
         searchBar.css("bottom", "0px");
-        $("#hider").css("background-color", "white");
+        $("#hider").css("background-color", "rgba(255,255,255,.0)");
         $("#hider").css("color", "#424874");
         $("#hider").text("HIDE");
         hidden = false;
     }
 }
 
+function hideLanding() {
+    $(".landingWrap").hide()
+    $("#modalCover").hide()
+    $("#dogVideo").hide()
+    hideShow()
+}
+
+$(document).on("click", "#searchPets", function() {
+   
+    var toolbar = $("#toolbarRender");
+    hideLanding();
+    toolbar.css("top", "0px");
+
+})
 // var pet_id;
 
 // database.ref().on("child_added", function(snapshot){

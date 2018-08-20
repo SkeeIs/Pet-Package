@@ -39,7 +39,7 @@ $(document).on("click", ".send", function(event){
     
     // Query URL for list of dog breeds
     //"https://cors-anywhere.herokuapp.com/http://api.petfinder.com/breed.list?key=" + petApiKey + "&animal=dog&format=json"
-
+    
     $.ajax({
         url: userQuery,
         method: "GET"

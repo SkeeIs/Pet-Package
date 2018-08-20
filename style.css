@@ -11,6 +11,7 @@
 body {
     margin: 0;
     font-family: "Moriston Bold";
+    overflow: hidden;
 }
 
 h3 {
@@ -42,6 +43,11 @@ h4 {
     width: 100%;
 }
 
+#google-map {
+    height: 100%;
+    width: 100%;
+}
+
 #toolbarRender {
     position: fixed;
     z-index: 100;
@@ -49,6 +55,7 @@ h4 {
     width: 100%;
     box-shadow: 0 5px 10px rgba(0,0,0,.5);
     transition: .3s ease;
+    top: -144px;
 }
 
 .toolbarWrap {
@@ -113,8 +120,13 @@ input[type=button], input[type=submit], input[type=reset] {
 }
 
 #hideShow h3 {
-    background-color: white;
+    background-color: rgba(255,255,255,.0);
     color:#424874;
+    transition: .2s ease
+}
+
+#hideShow h3:hover {
+    letter-spacing: 10px;
 }
 
 #dogSelect {
@@ -164,6 +176,44 @@ select {
     background-color: #FFF2E3;
 }
 
+#imgWrap {
+    display: flex;
+    width: 100%;
+}
+
+#logo {
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+}
+
+#searchPets {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+}
+
+.landingWrap {
+    position: absolute;
+    z-index: 300;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+    box-shadow: 0 -5px 100px rgba(0,0,0,1);
+    padding: 20px;
+    display: block;
+    animation: land 2s;
+}
+
+.center {
+    text-align: center;
+}
+
 .infoCardWrap {
     position: absolute;
     height: 300px;
@@ -176,7 +226,6 @@ select {
     background-color: white;
     box-shadow: 0 -5px 100px rgba(0,0,0,1);
     padding: 20px;
-    display: flex;
     display: none;
 }
 
@@ -212,19 +261,48 @@ h2 {
     width: 150px;
 }
 
+video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+}
+
 /* /MODAL */
 #modalCover {
     z-index: 200;
     height: 100vh;
     width: 100%;
-    background-color: rgba(0,0,0,.7);
+    background-color: rgba(0,0,0,.5);
     position: absolute;
     transition: .2s ease;
-    display: none;
 }
 
-
 /* ANIMATIONS */
+@keyframes land {
+    0% {
+        opacity: 0;
+        top: 55%;
+    }
+    30% {
+        opacity: 0;
+        top: 55%;
+    }
+    90% {
+        top: 50%;
+        /* opacity: 1; */
+    }
+    100% {
+        opacity: 1;
+        top: 50%;
+    }
+}
+
 @keyframes growIn {
     0% {
         opacity: 0;
@@ -244,6 +322,20 @@ h2 {
         opacity: .5;
     }
 }
+
+/* @keyframes hideVid {
+    0% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        display: none;
+    }
+} */
 
 
 /* /ANIMATIONS */
