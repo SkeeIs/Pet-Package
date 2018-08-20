@@ -33,7 +33,7 @@ function hideShow() {
 function hideLanding() {
     $(".landingWrap").hide()
     $("#modalCover").hide()
-    $("#dogVideo").hide()
+    // $("#dogVideo").hide()
     hideShow()
 }
 

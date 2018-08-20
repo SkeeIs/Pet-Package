@@ -94,6 +94,7 @@ $(document).on("click", ".send", function(event){
 var address;
 $(document).on("click", ".thumbnail", function(event){
    event.preventDefault();
+   $("#dogVideo").hide();
 //    var apikey = "AIzaSyATvFSKs1YEJMLy6w9qAIXKWgzoteNXrmg";
 //    address =  $("#addressInput").val();
 //    console.log("vets = "+ address);
