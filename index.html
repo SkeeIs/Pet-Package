@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pet Package</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/js/uikit-icons.min.js"></script>
     <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -13,13 +19,21 @@
     <script src="script.js"></script>
 </head>
 <body>
-    
+    <div class="modalPopup"></div>
     <div id="toolbarRender">
         <div class="toolBarWrap">
             <div class="toolbarHead">
                 <h3>PET PACKAGE</h3>
             </div>
             <div class="paramWrap">
+<<<<<<< HEAD
+
+                <div class="paramSection">
+                    <div class="inputChunk">
+                        <h4>Zipcode</h3>
+                        <input type="text" id="zipcode">
+                    </div>
+=======
                     <div class="paramSection">
                         <div class="inputChunk">
                             <h4>Type</h3>
@@ -38,8 +52,20 @@
                             <h4>Zipcode</h3>
                             <input type="text" id="location-input">
                         </div>
+>>>>>>> master
                 </div>
+
                 <div class="paramSection">
+<<<<<<< HEAD
+                    <div class="inputChunk">
+                        <h4>Size</h3>
+                        <select name="size" class="uk-select">
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                            <option value="XL">Extra Large</option>
+                            </select>
+=======
                         <div class="inputChunk">
                                 <h4>Size</h3>
                                 <input type="text" id="size-input">
@@ -48,16 +74,49 @@
                                 <h4>Age</h3>
                                 <input type="text" id="age-input">
                             </div>
+>>>>>>> master
                     </div>
+                </div>
+
                 <div class="paramSection">
                     <div class="inputChunk">
+<<<<<<< HEAD
+                        <h4>Age</h3>
+                        <select name="age">
+                            <option value="Baby">Baby</option>
+                            <option value="Young">Young</option>
+                            <option value="Adult">Adult</option>
+                            <option value="Senior">Senior</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="paramSection">
+                    <div class="inputChunk">
+                        <h4>Sex</h3>
+                        <select name="sex">
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="paramSection">
+                        <div class="inputChunk">
+                            <div class="typeSelect">
+                                <img src="img/dogSelect.png" alt="" id="dogSelect">
+                                <img src="img/catSelect.png" alt="" id="catSelect">
+                            </div>
+=======
                             <h4>Sex</h3>
                             <input type="text" id="sex-input">
                         </div>
                         <div class="inputChunk">
                             <input type="submit" id="send">
+>>>>>>> master
                         </div>
-                </div>
+                    </div>
+
             </div>
             <div id="hideShow">
                 <h3 id="hider">HIDE</h3>
