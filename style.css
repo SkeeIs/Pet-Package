@@ -35,7 +35,7 @@ h4 {
 }
 
 #mapRender {
-    background-image: url(img/map.png);
+    background-color: darkgray;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -46,6 +46,7 @@ h4 {
 #google-map {
     height: 100%;
     width: 100%;
+    margin-top: 23px;
 }
 
 #toolbarRender {
@@ -56,10 +57,6 @@ h4 {
     box-shadow: 0 5px 10px rgba(0,0,0,.5);
     transition: .3s ease;
     top: -144px;
-}
-
-.toolbarWrap {
-
 }
 
 .paramWrap {
@@ -106,17 +103,47 @@ input[type=button], input[type=submit], input[type=reset] {
 #picturesRender {
     position: fixed;
     z-index: 90;
-    bottom: 0;
     transition: .3s ease;
+    width: 1250px;
+}
+
+.thumbnail {
+    height: 200px;
+    width: 200px;
+    padding: 10px;
+    overflow: hidden;
+    transition: .2s ease;
+}
+
+.thumbnail h4 {
+    text-align: center;
+    padding-bottom: 10px;
+
+}
+
+.thumbnail:hover {
+    background-color: rgba(255,255,200,1);
+    padding: 10px 20px 10px 20px;
 }
 
 .picturesWrap {
-    height: 150px;
-    background-color: lightblue;
+    height: 250px;
+    background-color: white;
     position: fixed;
-    width: 100%;
     box-shadow: 0 -5px 10px rgba(0,0,0,.5);
-    display: flex;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 100%;
+    justify-content: space-evenly;
+    display: none;
+}
+
+.thumbnail p {
+    padding: 0px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin: 0 0 6px 0;
 }
 
 #hideShow h3 {
@@ -190,6 +217,14 @@ select {
 #searchPets {
     letter-spacing: 3px;
     text-transform: uppercase;
+    transition: .3s ease;
+}
+
+#searchPets:hover {
+    padding: 7px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    box-shadow: 1px 1px 1px 1px rgba(41, 38, 231, 0.74);
 }
 
 h1 {
@@ -253,12 +288,10 @@ h2 {
 #profilePic {
     height: 300px;
     width: 300px;
-    background-color: gray;
+    background-color: white;
 }
 
-.thumbnail {
-    height: 150px;
-    width: 150px;
+.thumbnail img {
 }
 
 video {
@@ -271,6 +304,65 @@ video {
     width: auto;
     height: auto;
     z-index: 1;
+}
+
+.mapParameters {
+    position: absolute;
+    right: 2%;
+    top: 45%;
+    width: 150px;
+    background-color: white;
+    transform: translateY(-50%);
+    box-shadow: 0 5px 10px rgba(0,0,0,.5);
+    display: none;
+}
+
+.mapParameters h4 {
+    padding: 10px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.mapParameters h3 {
+    padding: 15px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.mapParameters h4:hover {
+    color: white;
+    background-color: #424874bb;
+    letter-spacing: 2px;
+}
+
+.animalInfo {
+    position: absolute;
+    left: 2%;
+    top: 45%;
+    width: 150px;
+    background-color: white;
+    transform: translateY(-50%);
+    box-shadow: 0 5px 10px rgba(0,0,0,.5);
+    display: none;
+}
+
+.animalInfo h4 {
+    padding: 10px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: .3s ease;
+}
+
+.animalInfo h3 {
+    padding: 15px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
 }
 
 /* /MODAL */
@@ -323,7 +415,7 @@ video {
     }
 }
 
-/* @keyframes hideVid {
+@keyframes hideVid {
     0% {
         opacity: 1;
     }
@@ -335,7 +427,8 @@ video {
     100% {
         display: none;
     }
-} */
+}
 
-
-/* /ANIMATIONS */
+.displayNone {
+    display: none;
+}

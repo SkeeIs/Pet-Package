@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pet Package</title>
+    <link rel="shortcut icon" href="img/dogSelect.png">
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/css/uikit.min.css" />
 
@@ -20,12 +21,14 @@
     <!-- Javascript -->
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
     <!-- need to change this link -->
-      <script src="test.js"></script>
+
       <script src="script.js"></script>
-  
+      <script src="test.js"></script>
+
 </head>
 <body>
     <div class="modalPopup"></div>
+
     <div id="toolbarRender">
         <div class="toolBarWrap">
             <div class="toolbarHead">
@@ -90,6 +93,20 @@
         </div>
     </div>
 
+    <div class="animalInfo">
+        <h3>Pet Info</h3>
+        <h4 id="mapName">Name</h4>
+        <h4 id="mapBreed">Breed</h4>
+        <h4 id="mapNumber">Phone Number</h4>
+    </div>
+
+    <div class="mapParameters">
+        <h3>Readjust Map</h3>
+        <h4 id="mapVets">Vets</h4>
+        <h4 id="mapStores">Pet stores</h4>
+        <h4 id="mapParks">Dog Parks</h4>
+    </div>
+
     <div id="picturesRender">
         <div class="picturesWrap">
         </div>
@@ -100,7 +117,7 @@
         <img src="img/dogSelect.png" alt="logo" id="logo">
         </div>
         <h1 class="center">Pet Package</h1>
-        <p class="center">Pet Package is a platform that allows pet-seekers to search, rank, and contact local adoption clinics by offering geographic references.</p>
+        <p class="center">Pet Package is a platform that allows pet-seekers to search and contact local adoption clinics by offering geographic references.</p>
         <h3 id="searchPets">Search pets!</h3>
     </div>
 
@@ -124,6 +141,7 @@
     <div id="mapRender">
         <iframe id= "google-map" width="100%" height="100vh" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
+
     <video poster="#" id="dogVideo" autoplay muted loop>
         <source src="graphics/dogvideo.mp4" type="video/mp4">
     </video>
