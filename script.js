@@ -9,6 +9,13 @@ $(document).on("click", ".animal-pick", function() {
     hideShow();
 })
 
+function stopVideo() {
+    $("#dogVideo").css("animation", "2s hideVid")
+    setTimeout(function(){
+        $("#dogVideo").hide()
+    }, 1800)
+}
+
 function hideShow() {
     var toolbar = $("#toolbarRender");
     var searchBar = $("#picturesRender");
@@ -19,7 +26,6 @@ function hideShow() {
         $("#hider").text("SHOW");
         $("#hider").css("background-color", "#424874");
         $("#hider").css("color", "white");
-        $(".mapParameters").show()
         hidden = true;
     }
     else if(hidden){
@@ -28,7 +34,6 @@ function hideShow() {
         $("#hider").css("background-color", "rgba(255,255,255,.0)");
         $("#hider").css("color", "#424874");
         $("#hider").text("HIDE");
-        $(".mapParameters").hide()
         hidden = false;
     }
 }
@@ -36,10 +41,6 @@ function hideShow() {
 function hideLanding() {
     $(".landingWrap").hide()
     $("#modalCover").hide()
-    $("#dogVideo").css("animation", "2s hideVid")
-    setTimeout(function(){
-        $("#dogVideo").hide()
-    }, 1800)
     hideShow()
 }
 
@@ -50,3 +51,4 @@ $(document).on("click", "#searchPets", function() {
     toolbar.css("top", "0px");
 
 })
+

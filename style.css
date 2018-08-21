@@ -292,7 +292,7 @@ video {
 
 .mapParameters {
     position: absolute;
-    right: 0;
+    right: 2%;
     top: 50%;
     width: 150px;
     background-color: white;
@@ -301,14 +301,14 @@ video {
 }
 
 .mapParameters h4 {
-    padding: 10px 10px 10px 20px;
+    padding: 10px;
     text-transform: capitalize;
     letter-spacing: 1px;
     text-align: center;
 }
 
 .mapParameters h3 {
-    padding: 15px 15px 10px 20px;
+    padding: 15px;
     text-transform: capitalize;
     letter-spacing: 1px;
     margin-bottom: 5px;
