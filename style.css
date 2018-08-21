@@ -1,0 +1,434 @@
+@font-face {
+    font-family: Moriston;
+    src: url(assets/Moriston/MoristonPersonal-Regular.otf);
+}
+
+@font-face {
+    font-family: "Moriston Bold";
+    src: url(assets/Moriston/MoristonPersonal-Bold.otf);
+}
+
+body {
+    margin: 0;
+    font-family: "Moriston Bold";
+    overflow: hidden;
+}
+
+h3 {
+    margin: 0;
+    text-align: center;
+    background-color: #424874;
+    color: white;
+    font-size: 10px;
+    letter-spacing: 4px;
+    padding: 5px;
+    font-family: "Moriston Bold"
+}
+
+h4 {
+    margin: 0;
+    color: #424874;
+    font-size: 12px;
+    font-family: "Moriston Bold";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#mapRender {
+    background-color: darkgray;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+}
+
+#google-map {
+    height: 100%;
+    width: 100%;
+    margin-top: 23px;
+}
+
+#toolbarRender {
+    position: fixed;
+    z-index: 100;
+    background-color: rgba(255,255,255,.9);
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0,0,0,.5);
+    transition: .3s ease;
+    top: -144px;
+}
+
+.paramWrap {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 20px 0 20px;
+    width: 650px;
+    margin: 0 auto;
+}
+
+.inputChunk {
+}
+
+input[type=text] {
+    width: 150px;
+    padding: 5px;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #FFF2E3;
+    border: none;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    border: none;
+    color: white;
+    background-color: #424874;
+    padding: 4px 8px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: "Moriston bold";
+    border-radius: 4px;
+    margin-top: 18px;
+}
+
+.class {
+    display: flex;
+    justify-content: space-around;
+}
+
+#picturesRender {
+    position: fixed;
+    z-index: 90;
+    transition: .3s ease;
+    width: 1250px;
+}
+
+.thumbnail {
+    height: 200px;
+    width: 200px;
+    padding: 10px;
+    overflow: hidden;
+    transition: .2s ease;
+}
+
+.thumbnail h4 {
+    text-align: center;
+    padding-bottom: 10px;
+
+}
+
+.thumbnail:hover {
+    background-color: rgba(255,255,200,1);
+    padding: 10px 20px 10px 20px;
+}
+
+.picturesWrap {
+    height: 250px;
+    background-color: white;
+    position: fixed;
+    box-shadow: 0 -5px 10px rgba(0,0,0,.5);
+    margin: 0 auto;
+    overflow: hidden;
+    width: 100%;
+    justify-content: space-evenly;
+    display: none;
+}
+
+.thumbnail p {
+    padding: 0px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin: 0 0 6px 0;
+}
+
+#hideShow h3 {
+    background-color: rgba(255,255,255,.0);
+    color:#424874;
+    transition: .2s ease
+}
+
+#hideShow h3:hover {
+    letter-spacing: 10px;
+}
+
+#dogSelect {
+    width: 60px;
+    height: 60px;
+}
+
+#catSelect {
+    width: 60px;
+    height: 60px;
+}
+
+/* MODAL */
+.modal__body {
+    height: 300px;
+    width: 300px;
+    background: red;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 101;
+    animation: growIn .3s;
+    box-shadow: 0 -5px 3900px rgba(0,0,0,1);
+}
+
+.modal__background {
+    height: 100vh;
+    width: 100vw;
+    animation: fadeIn .3s;
+}
+
+select {
+    padding: 40px;
+}
+
+.uk-select {
+    height: auto;
+}
+
+.uk-input, .uk-select:not([multiple]):not([size]) {
+    height: auto;
+    font-family: Moriston;
+    font-size: 12px;
+    padding: 2px;
+    width: 75px;
+    background-color: #FFF2E3;
+}
+
+#imgWrap {
+    display: flex;
+    width: 100%;
+}
+
+#logo {
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+}
+
+#searchPets {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: .3s ease;
+}
+
+#searchPets:hover {
+    padding: 7px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    box-shadow: 1px 1px 1px 1px rgba(41, 38, 231, 0.74);
+}
+
+h1 {
+    margin: 0;
+}
+
+.landingWrap {
+    position: absolute;
+    z-index: 300;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+    box-shadow: 0 -5px 100px rgba(0,0,0,1);
+    padding: 20px;
+    display: block;
+    animation: land 2s;
+}
+
+.center {
+    text-align: center;
+}
+
+.infoCardWrap {
+    position: absolute;
+    height: 300px;
+    width: 550px;
+    border-top: 10px solid #424874;
+    z-index: 300;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+    box-shadow: 0 -5px 100px rgba(0,0,0,1);
+    padding: 20px;
+    display: none;
+}
+
+#infoCardRightSide {
+    padding-left: 20px;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+#infoCardRightSide h3 {
+    color: black;
+    background: none;
+    text-align: left;
+    letter-spacing: 1px;
+    padding: 5px 0;
+}
+
+.pictureInfo {
+    display: flex;
+
+}
+
+#profilePic {
+    height: 300px;
+    width: 300px;
+    background-color: white;
+}
+
+.thumbnail img {
+}
+
+video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+}
+
+.mapParameters {
+    position: absolute;
+    right: 2%;
+    top: 45%;
+    width: 150px;
+    background-color: white;
+    transform: translateY(-50%);
+    box-shadow: 0 5px 10px rgba(0,0,0,.5);
+    display: none;
+}
+
+.mapParameters h4 {
+    padding: 10px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.mapParameters h3 {
+    padding: 15px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.mapParameters h4:hover {
+    color: white;
+    background-color: #424874bb;
+    letter-spacing: 2px;
+}
+
+.animalInfo {
+    position: absolute;
+    left: 2%;
+    top: 45%;
+    width: 150px;
+    background-color: white;
+    transform: translateY(-50%);
+    box-shadow: 0 5px 10px rgba(0,0,0,.5);
+    display: none;
+}
+
+.animalInfo h4 {
+    padding: 10px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: .3s ease;
+}
+
+.animalInfo h3 {
+    padding: 15px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+/* /MODAL */
+#modalCover {
+    z-index: 200;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    transition: .2s ease;
+}
+
+/* ANIMATIONS */
+@keyframes land {
+    0% {
+        opacity: 0;
+        top: 55%;
+    }
+    30% {
+        opacity: 0;
+        top: 55%;
+    }
+    90% {
+        top: 50%;
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        top: 50%;
+    }
+}
+
+@keyframes growIn {
+    0% {
+        opacity: 0;
+        transform: scale(.5) translate(-75%, -75%);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translate(-50%, -50%);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: .5;
+    }
+}
+
+@keyframes hideVid {
+    0% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        display: none;
+    }
+}
+
+.displayNone {
+    display: none;
+}
