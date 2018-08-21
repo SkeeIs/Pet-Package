@@ -16,8 +16,10 @@ var database = firebase.database();
 var animalType;
 var address;
 
+
 $(document).on("click", ".send", function(event){
     event.preventDefault();
+    $(".mapParameters").hide();
     
     animalType = $(this).attr("data-type");
     console.log(animalType);
@@ -53,8 +55,9 @@ $(document).on("click", ".send", function(event){
         var streetAddr = [];
 
         for (var i = 0; i < shortenedObj.length; i++) {
-            if (shortenedObj[i].contact.address1.$t) {
-
+            if (shortenedObj[i].contact.address1.$t && shortenedObj[i].media.photos) {
+                console.log("index of " + i);
+                
                 nameArr.push(shortenedObj[i].name.$t);
                 zipArr.push(shortenedObj[i].contact.zip.$t);
                 imgArr.push(shortenedObj[i].media.photos.photo[2].$t);
@@ -82,7 +85,7 @@ $(document).on("click", ".send", function(event){
             thumbnail.addClass("thumbnail");
             thumbnail.attr("id", i);
             var petName = $("<h4>").text(nameArr[i]);
-            var breedType = $("<h4>").text(breedArr[i]);
+            var breedType = $("<p>").text(breedArr[i]);
             thumbnail.attr("data-location", streetAddr[i]);
             var image = $("<img>").attr("src", imgArr[i]);
             thumbnail.append(petName, breedType, image);
@@ -115,15 +118,15 @@ $(document).on("click", ".send", function(event){
 
 $(document).on("click", ".thumbnail", function(event){
    event.preventDefault();
-
+    stopVideo();
    address = $(this).attr("data-location");
 
    console.log(address);
-   console.log("vets = "+ vets);
 
    var queryURL = "https://www.google.com/maps/embed/v1/search?q=" + address + "&key=" + mapApiKey;
    console.log("queryURL = "+ queryURL);
    $("#google-map").attr("src", queryURL);
+   $(".mapParameters").show();
 });
 
 $(document).on("click", "#mapVets", function(event){
