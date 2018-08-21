@@ -85,10 +85,14 @@ $(document).on("click", ".send", function(event){
             thumbnail.addClass("thumbnail");
             thumbnail.attr("id", i);
             var petName = $("<h4>").text(nameArr[i]);
+            thumbnail.attr("name", nameArr[i]);
             var breedType = $("<p>").text(breedArr[i]);
+            thumbnail.attr("breed", breedArr[i]);
             thumbnail.attr("data-location", streetAddr[i]);
+            var phoneNum = $("<p>").text(phoneArr[i]);
+            thumbnail.attr("number", phoneArr[i]);
             var image = $("<img>").attr("src", imgArr[i]);
-            thumbnail.append(petName, breedType, image);
+            thumbnail.append(petName, image);
             $(".picturesWrap").append(thumbnail);
         }   
 
@@ -127,12 +131,18 @@ $(document).on("click", ".thumbnail", function(event){
    console.log("queryURL = "+ queryURL);
    $("#google-map").attr("src", queryURL);
    $(".mapParameters").show();
+   $(".animalInfo").show();
+
+   $("#mapName").text("Name: " + $(this).attr("name"));
+   $("#mapBreed").text($(this).attr("breed"));
+   $("#mapNumber").text($(this).attr("number"));
 });
 
 $(document).on("click", "#mapVets", function(event){
     event.preventDefault();
 
-    var vets = "Veterinarians Near" + address;
+    var vets = "Veterinarians Near " + address;
+    console.log(vets);
 
     var queryURL = "https://www.google.com/maps/embed/v1/search?q=" + vets + "&key=" + mapApiKey;
     $("#google-map").attr("src", queryURL);
@@ -141,7 +151,7 @@ $(document).on("click", "#mapVets", function(event){
 $(document).on("click", "#mapParks", function(event){
     event.preventDefault();
 
-    var parks = "Dog Parks Near" + address;
+    var parks = "Dog Parks Near " + address;
 
     var queryURL = "https://www.google.com/maps/embed/v1/search?q=" + parks + "&key=" + mapApiKey;
     $("#google-map").attr("src", queryURL);
@@ -150,7 +160,7 @@ $(document).on("click", "#mapParks", function(event){
 $(document).on("click", "#mapStores", function(event){
     event.preventDefault();
 
-    var stores = "Pet Stores Near" + address;
+    var stores = "Pet Stores Near " + address;
 
     var queryURL = "https://www.google.com/maps/embed/v1/search?q=" + stores + "&key=" + mapApiKey;
     $("#google-map").attr("src", queryURL);
