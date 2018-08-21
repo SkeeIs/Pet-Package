@@ -298,6 +298,7 @@ video {
     background-color: white;
     transform: translateY(-50%);
     box-shadow: 0 5px 10px rgba(0,0,0,.5);
+    display: none;
 }
 
 .mapParameters h4 {
