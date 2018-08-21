@@ -131,11 +131,11 @@ input[type=button], input[type=submit], input[type=reset] {
     background-color: white;
     position: fixed;
     box-shadow: 0 -5px 10px rgba(0,0,0,.5);
-    display: flex;
     margin: 0 auto;
     overflow: hidden;
     width: 100%;
-    justify-content: space-evenly
+    justify-content: space-evenly;
+    display: none;
 }
 
 #hideShow h3 {
@@ -294,7 +294,7 @@ video {
     position: absolute;
     right: 0;
     top: 50%;
-    max-width: 200px;
+    width: 150px;
     background-color: white;
     transform: translateY(-50%);
     box-shadow: 0 5px 10px rgba(0,0,0,.5);
@@ -304,7 +304,7 @@ video {
     padding: 10px 10px 10px 20px;
     text-transform: capitalize;
     letter-spacing: 1px;
-
+    text-align: center;
 }
 
 .mapParameters h3 {
@@ -312,6 +312,7 @@ video {
     text-transform: capitalize;
     letter-spacing: 1px;
     margin-bottom: 5px;
+    cursor: pointer;
 }
 
 /* /MODAL */

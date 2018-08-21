@@ -15,6 +15,7 @@ function hideShow() {
     if(!hidden){ 
         toolbar.css("top", "-104px");
         searchBar.css("bottom", "230px");
+        $(".picturesWrap").css("display", "flex");
         $("#hider").text("SHOW");
         $("#hider").css("background-color", "#424874");
         $("#hider").css("color", "white");
