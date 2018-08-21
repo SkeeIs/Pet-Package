@@ -1,12 +1,14 @@
 # Pet-Package
 
-Pet Package is a robust, API-driven tool to simplify and expedite the pet adoption process.
+Pet Package is an API-driven platform that allows pet-seekers to search and contact local humane societies and adoption clinics by offering geographic references!
+
+Pet Package is a robust, tool to simplify and inform about the pet adoption process.
 
 * Powered by Javascript, jQuery, Firebase, Petfinder API, and Google Maps API!
 
 ## Motivations
 
-We strive to create a user-friendly product that can help abandoned and in-need animals find homes. Our web app will also help the new owner locate pet related resources in their area, like vet clinics & pet stores.
+We strive to create a user-friendly product that can help abandoned and in-need animals find homes. Our web app will also help the new owner locate pet-related resources in their area, like vet clinics & pet stores.
 
 Often, we overlook the needs of animals in our own locales due to our hectic daily lives, especially in noisy, tumultuous cities like San Francisco and New York City. However, with the right tools, many of us would lend a hand to our fellow creatures. Our hope is to provide the connection between animals and future pet-owners to establish a friendly environment for all.
 
@@ -22,7 +24,7 @@ Follow the deployed project link below to utilize the application.
 
 ### Image Preview of Pet Package
 <!-- take a picture of the image and add it into the readme  -->
-![Pet Package Preview]( "Pet Package")
+![Pet Package Preview](img/preview1.png "Pet Package")
 
 ## Prerequisites
 
