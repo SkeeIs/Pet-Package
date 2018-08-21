@@ -45,10 +45,57 @@ The page can be run from any browser, preferably on Google Chrome!
 <!-- put snippets of code inside ``` ``` so it will look like code -->
 <!-- if you want to put blockquotes use a > -->
 
-Dynamic generation of HTML elements via jQuery is an extremely powerful tool to instantaneously adjust the webpage to the user's interaction with the interface. Here, jQuery interacts with Firebase to push new user entries onto the cloud.
+Dynamic generation of HTML elements via jQuery is an extremely powerful tool to instantaneously adjust the webpage to the user's interaction with the interface. Here, jQuery interacts with Firebase to push new user entries onto the cloud. Here, we dynamically generate a particular source attribute of a Google Maps iFrame HTML element so that we can query appropriately.
 
 ```
+var address;
+$(document).on("click", ".thumbnail", function(event){
+   event.preventDefault();
 
+   $("#dogVideo").hide();
+   var apikey = "AIzaSyATvFSKs1YEJMLy6w9qAIXKWgzoteNXrmg";
+
+   var address = $(this).val();
+   var vets = "Veterinarians Near" + address;
+   var parks = "Dog Parks Near" + address;
+   
+   var queryURL = "https://www.google.com/maps/embed/v1/search?q=" + vets + "OR" + parks + "&key=" + apikey;
+   console.log("queryURL = "+ queryURL);
+   $("#google-map").attr("src", queryURL);
+});
+```
+
+We implemented dynamic CSS styling upon creation of new HTML elements. 
+
+```
+$(document).on("click", "#hideShow", function (){
+   hideShow();
+});
+
+$(document).on("click", ".animal-pick", function() {
+    hideShow();
+})
+
+function hideShow() {
+    var toolbar = $("#toolbarRender");
+    var searchBar = $("#picturesRender");
+    if(!hidden){ 
+        toolbar.css("top", "-104px");
+        searchBar.css("bottom", "150px");
+        $("#hider").text("SHOW");
+        $("#hider").css("background-color", "#424874");
+        $("#hider").css("color", "white");
+        hidden = true;
+    }
+    else if(hidden){
+        toolbar.css("top", "0px");
+        searchBar.css("bottom", "0px");
+        $("#hider").css("background-color", "rgba(255,255,255,.0)");
+        $("#hider").css("color", "#424874");
+        $("#hider").text("HIDE");
+        hidden = false;
+    }
+}
 
 ```
 
