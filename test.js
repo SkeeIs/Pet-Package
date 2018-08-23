@@ -59,7 +59,7 @@ $(document).on("click", ".send", function(event){
                 console.log("index of " + i);
                 
                 nameArr.push(shortenedObj[i].name.$t);
-                zipArr.push(shortenedObj[i].contact.zip.$t);
+                zipArr.push(shortenedObj[i].contact.city.$t + " " + shortenedObj[i].contact.zip.$t);
                 imgArr.push(shortenedObj[i].media.photos.photo[2].$t);
                 streetAddr.push(shortenedObj[i].contact.address1.$t);
                 
@@ -89,6 +89,7 @@ $(document).on("click", ".send", function(event){
             var breedType = $("<p>").text(breedArr[i]);
             thumbnail.attr("breed", breedArr[i]);
             thumbnail.attr("data-location", streetAddr[i]);
+            thumbnail.attr("data-zip", zipArr[i]);
             var phoneNum = $("<p>").text(phoneArr[i]);
             thumbnail.attr("number", phoneArr[i]);
             var image = $("<img>").attr("src", imgArr[i]);
@@ -103,12 +104,14 @@ $(document).on("click", ".send", function(event){
         console.log(breedArr);
         
         database.ref().push({
+            
             //Storing search params
             Type: animalType,
             age: age,
             size: size,
             sex: sex,
             zip: zip,
+
             //Storing petfinder API return data
             name: nameArr,
             zipCode: zipArr,
@@ -123,7 +126,16 @@ $(document).on("click", ".send", function(event){
 $(document).on("click", ".thumbnail", function(event){
    event.preventDefault();
     stopVideo();
-   address = $(this).attr("data-location");
+    var parsedAddress = $(this).attr("data-location").replace(/\./g,'');
+    console.log(parsedAddress)
+
+    if(parsedAddress.includes("PO Box" || "POBox")){
+        address = $(this).attr("data-zip");
+    }
+    else{
+        address = $(this).attr("data-location") + " " + $(this).attr("data-zip");
+    }
+   
 
    console.log(address);
 
